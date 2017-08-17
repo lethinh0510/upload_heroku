@@ -58,7 +58,27 @@ exports = module.exports = function (app) {
 	// app.get('/download/users', routes.download.users);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+	app.use(function (req, res, next) {
 
+		// Website you wish to allow to connect
+		res.setHeader('Access-Control-Allow-Origin', '*');
+
+		// Request methods you wish to allow
+		res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+		// Request headers you wish to allow
+		res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+		// Set to true if you need the website to include cookies in the requests sent
+		// to the API (e.g. in case you use sessions)
+		res.setHeader('Access-Control-Allow-Credentials', true);
+
+		// Pass to next layer of middleware
+		next();
+	});
+	
+	
+	
 	// Posts
 	app.get('/api/posts', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
 	app.get('/api/posts/slide', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.listSlide);

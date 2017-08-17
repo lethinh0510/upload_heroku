@@ -36,7 +36,7 @@ keystone.init({
 	// 'cloudinary config': { cloud_name: 'dsntngtdx', api_key: '392815345381645', api_secret: '0A1cZPsj1cBAQleWEeojUYmTmmM' },
 	'cloudinary config': 'cloudinary://392815345381645:0A1cZPsj1cBAQleWEeojUYmTmmM@dsntngtdx',
 	'cookie secret': 'aa31290d25d1b1c2cee116328f712a8e633fdceb58ffbfdd7efac5a8afd8b735225387f810373170f6ce89199633e7c5492c8c4bfd350414da47d90a3aa2acca',
-	'signin logo': ['/images/logo.svg', 200, 200],
+	'signin logo': ['/assets/images/logo.svg', 200, 200],
 	'session': true,
 	'auth': true,
 	'user model': 'User'
